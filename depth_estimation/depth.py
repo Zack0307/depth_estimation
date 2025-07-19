@@ -14,7 +14,7 @@ class DepthImageNode(Node):
             super().__init__('Depth_node')
             self.frame = 0
             self.cam_pub = self.create_publisher(Image, '/depth_pub_image', 10)
-            self.cam_sub = self.create_subscription(Image, '/depth_sub_image', self.subscribe_callback,  10)
+            self.cam_sub = self.create_subscription(Image, '/depth_pub_image', self.subscribe_callback,  10)
             self.seg_pub = self.create_publisher(Image, '/seg_pub_image', 10)
             self.cap = cv2.VideoCapture(0)
             self.cvbr = CvBridge()
